@@ -5,7 +5,6 @@ import shutil
 import sys
 import json
 import tempfile
-import subprocess
 from os.path import basename, join
 from typing import Sequence
 import jmespath
@@ -54,7 +53,7 @@ def image_normalize(img):
     img = img.convert("L")
 
     # Resize to 32x32
-    im = img.resize((32, 32), Image.Resampling.BICUBIC)
+    im = img.resize((32, 32), idk.BICUBIC)
 
     # A flattened sequence of grayscale pixel values (1024 pixels)
     pixels = im.getdata()
@@ -223,7 +222,7 @@ def image_thumbnail(fp):
     """
     size = idk.sdk_opts.image_thumbnail_size
     img = Image.open(fp)
-    img.thumbnail((size, size), resample=Image.Resampling.LANCZOS)
+    img.thumbnail((size, size), resample=idk.LANCZOS)
     return ImageEnhance.Sharpness(img.convert("RGB")).enhance(1.4)
 
 

@@ -1,5 +1,9 @@
 ## Changelog
 
+### 0.4.6 - Unreleased
+- Updated dependencies
+- Added support for earlier Pillow versions
+
 ### 0.4.5 - 2022-07-04
 - Update to iscc-schema v0.3.9
 - Update to iscc-core v0.2.11
